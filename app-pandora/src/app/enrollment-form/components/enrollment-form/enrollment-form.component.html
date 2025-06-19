@@ -1,0 +1,20 @@
+<div class="enrollment-container">
+
+    <div class="nav-column">
+      <app-form-navigation
+        [sections]="enrollmentStateService.sections$ | async"
+        [activeSectionId]="enrollmentStateService.activeSectionId$ | async"
+        (sectionSelected)="enrollmentStateService.setActiveSection($event)">
+      </app-form-navigation>
+    </div>
+  
+    <!-- <div class="pdf-column">
+      <app-pdf-viewer [pdfSource]="'path/to/your/document.pdf'"></app-pdf-viewer>
+    </div>
+  
+    <div class="form-column">
+      <app-form-area [activeSectionId]="stateService.activeSectionId$ | async"></app-form-area>
+    </div> -->
+
+  
+  </div>
