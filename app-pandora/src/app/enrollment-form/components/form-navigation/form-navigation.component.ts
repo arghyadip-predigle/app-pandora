@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export interface NavigationSection {
-  id: string;          
+  id: number;          
   title: string;
   completed: boolean;  
   activeIcon: string; 
@@ -16,11 +16,15 @@ export interface NavigationSection {
 
 export class FormNavigationComponent {
   @Input() sections: NavigationSection[] | null = [];
-  @Input() activeSectionId: string | null = null;
+  @Input() activeSectionId: number | null = null;
 
-  @Output() sectionSelected = new EventEmitter<string>();
+  @Output() sectionSelected = new EventEmitter<number>();
 
-  onSelectSection(sectionId: string): void {
+  ngOnInit(){
+    console.log('---->',this.sections)
+  }
+
+  onSelectSection(sectionId: number): void {
       if (sectionId === this.activeSectionId) {
       return;
     }

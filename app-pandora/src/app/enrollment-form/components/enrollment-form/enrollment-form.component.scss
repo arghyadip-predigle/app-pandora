@@ -1,7 +1,12 @@
 .enrollment-container{
     display: flex;
-    
+    // height: 100vh;
+
     .nav-column{
-        width: 15%;
+        width: 20%;
+    }
+
+    .pdf-column{
+        width: 40%;
     }
 }

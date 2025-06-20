@@ -1,0 +1,22 @@
+<div class="card-content" [ngClass]="{
+    'active': data?.id === (activeSectionId | async),
+    'in-active': data?.id !== (activeSectionId|async)
+  }">
+  <div class="left-wrapper">
+    <div class="icon"><img src="{{data?.id===  (activeSectionId | async) ?  data?.activeIcon : data?.inactiveIcon}}" alt=""></div>
+    <div class="content">
+        <div class="section">Section {{data?.id}}</div>
+        <div class="name">{{data?.title}}</div>
+    </div>
+  </div>
+    
+    <div class="completion" *ngIf="data?.completed"><img src="./assets/icons/checkbox-active.svg" alt=""></div>
+    <div class="completion" *ngIf="!data?.completed"><img src="./assets/icons/checkbox.svg" alt=""></div>
+</div>
+<!-- {
+    "id": 1,
+    "title": "Patient Information",
+    "completed": true,
+    "activeIcon": "./assets/icons/patient-info-active.svg",
+    "inactiveIcon": "./assets/icons/patient-info.svg"
+} -->

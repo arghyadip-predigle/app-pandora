@@ -1,12 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 $border-primary: rgba(208, 213, 221, 1); 
-$border-secondary: rgba(233, 236, 241, 1); 
+$border-secondary: rgba(233, 236, 241, 1);
+$border-blue-500:rgba(43, 80, 230, 1);
+$border-gray:rgba(249, 250, 251, 1);
+$border-gray-500:rgba(208, 213, 221, 1);
 
 $text-primary: rgba(11, 16, 26, 1); // For primary headlines and important text
 $text-secondary: rgba(52, 64, 84, 1);
+$text-tertiary:rgba(71, 84, 103, 1);
+$text-quarterary:rgba(102, 112, 132, 1);
 
 $bg-primary: rgba(255, 255, 255, 1); // For primary buttons, key-action backgrounds
-// $bg-secondary: $color-secondary;
+$bg-secondary: rgba(239, 244, 255, 1);
 
 $btn-primary: rgba(34, 60, 211, 1);
 $btn-seconday: rgba(150, 185, 250, 1);

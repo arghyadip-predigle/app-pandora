@@ -1,0 +1,40 @@
+@import '../../../styles.scss';
+
+.card-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 12px;
+
+    .left-wrapper{
+        display: flex;
+        gap: 1rem;
+    .content{
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        .section{
+            font-size: 14px;
+            font-weight: 400;
+            color: $text-quarterary;
+        }
+        .name{
+            font-size: 16px;
+            font-weight: 500;
+            color: $text-primary;
+        }
+    }
+    }
+    
+    .completion{}
+}
+.active{
+    background-color: $bg-secondary;
+    border: 1px solid $border-blue-500;
+}
+
+.in-active{
+    background-color: $border-gray;
+    border: 1px solid $border-secondary;
+}

@@ -1,1 +1,21 @@
 
+<div class="content-wrapper">
+    <div class="content">
+        <div class="header">
+            <div class="header-text">Enrollment Form -001</div>
+            <div class="icon"><img src="./assets/icons/sidebar-left.svg" alt=""></div>
+        </div>
+        <div class="sub-text">Patient Enrolment Form containing patient details</div>
+    
+        <div class="card-wrapper">
+            <div class="card" *ngFor="let section of sections">
+                <app-nav-card [data]="section || null"></app-nav-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="exit">
+        <button class="exit-btn"><img src="./assets/icons/logout.svg" alt=""> Exit</button>
+    </div>
+    
+</div>

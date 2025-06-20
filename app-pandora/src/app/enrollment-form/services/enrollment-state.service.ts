@@ -10,46 +10,46 @@ export interface Section {
 
 const INITIAL_SECTIONS: NavigationSection[] = [
   {
-    id: 'patientInfo',
+    id: 1,
     title: 'Patient Information',
     completed: true, // Let's assume the first one is complete for the example
-    activeIcon: 'account_box',
-    inactiveIcon:''
+    activeIcon: './assets/icons/patient-info-active.svg',
+    inactiveIcon:'./assets/icons/patient-info.svg'
   },
   {
-    id: 'patientInsurance',
+    id: 2,
     title: 'Patient Insurance',
     completed: false,
-    activeIcon: 'medical_services',
-    inactiveIcon:''
+    activeIcon: './assets/icons/patient-insurance-active.svg',
+    inactiveIcon:'./assets/icons/patient-insurance.svg'
   },
   {
-    id: 'clinicalInfo',
+    id: 3,
     title: 'Clinical Information',
     completed: false,
-    activeIcon: 'assignment',
-    inactiveIcon:''
+    activeIcon: './assets/icons/clinical-info-active.svg',
+    inactiveIcon:'./assets/icons/clinical-info.svg'
   },
   {
-    id: 'prescriberInfo',
+    id: 4,
     title: 'Prescriber Information',
     completed: false,
-    activeIcon: 'medication',
-    inactiveIcon:''
+    activeIcon: './assets/icons/prescriber-info-active.svg',
+    inactiveIcon:'./assets/icons/prescriber-info.svg'
   },
   {
-    id: 'prescriptionInfo',
+    id: 5,
     title: 'Prescription Information',
     completed: false,
-    activeIcon: 'description',
-    inactiveIcon:''
+    activeIcon: './assets/icons/prescription-info-active.svg',
+    inactiveIcon:'./assets/icons/prescription-info.svg'
   },
   {
-    id: 'authorization',
+    id: 6,
     title: 'Authorization',
     completed: false,
-    activeIcon: 'verified_user',
-    inactiveIcon:''
+    activeIcon: './assets/icons/auth-info-active.svg',
+    inactiveIcon:'./assets/icons/auth-info.svg'
   },
 ];
 
@@ -58,7 +58,7 @@ const INITIAL_SECTIONS: NavigationSection[] = [
 })
 export class EnrollmentStateService {
   private readonly _sections = new BehaviorSubject<NavigationSection[]>(INITIAL_SECTIONS);
-  public _activeSectionId = new BehaviorSubject<string>('patientInfo');
+  public _activeSectionId = new BehaviorSubject<number>(1);
 
   // Publicly exposed Observables that components can subscribe to
   public readonly sections$ = this._sections.asObservable();
@@ -66,11 +66,11 @@ export class EnrollmentStateService {
 
   constructor() { }
 
-  public setActiveSection(sectionId: string) {
+  public setActiveSection(sectionId: number) {
     this._activeSectionId.next(sectionId);
   }
 
-  public setSectionCompletion(sectionId: string, completed: boolean): void {
+  public setSectionCompletion(sectionId: number, completed: boolean): void {
     const currentSections = this._sections.getValue();
     const updatedSections = currentSections.map((section) =>
       section.id === sectionId ? { ...section, completed } : section

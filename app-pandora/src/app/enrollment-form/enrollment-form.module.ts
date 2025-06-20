@@ -20,6 +20,9 @@ import { AuthorizationComponent } from './components/form-area/authorization/aut
 import { PatientInformationComponent } from './components/form-area/patient-information/patient-information.component';
 import { PatientInsuranceComponent } from './components/form-area/patient-insurance/patient-insurance.component';
 import { ClinicalInformationComponent } from './components/form-area/clinical-information/clinical-information.component';
+import { NavCardComponent } from '../shared/nav-card/nav-card.component';
+import { MaterialModule } from '../material/material.module';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 
@@ -38,7 +41,8 @@ import { ClinicalInformationComponent } from './components/form-area/clinical-in
     EnrollmentFormComponent,
     PrescriberInformationComponent,
     PrescriptionInformationComponent,
-    AuthorizationComponent
+    AuthorizationComponent,
+    NavCardComponent
   ],
   /**
    * Import other modules whose exported components or directives are used in this module's templates.
@@ -46,7 +50,9 @@ import { ClinicalInformationComponent } from './components/form-area/clinical-in
   imports: [
     CommonModule,          
     ReactiveFormsModule, 
-    EnrollmentFormRoutingModule 
+    EnrollmentFormRoutingModule,
+    MaterialModule,
+    PdfViewerModule 
   ],
   /**
    * If you were to use these components in another module (like AppModule), you would export them.

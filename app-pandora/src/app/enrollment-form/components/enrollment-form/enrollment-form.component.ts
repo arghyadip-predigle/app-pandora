@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class EnrollmentFormComponent {
   public sections$: Observable<NavigationSection[]>;
-  public activeSectionId$: Observable<string>;
+  public activeSectionId$: Observable<number>;
 
   constructor(public enrollmentStateService: EnrollmentStateService) {
     // Connect the component's observables to the service's observables.
@@ -19,7 +19,7 @@ export class EnrollmentFormComponent {
     this.activeSectionId$ = this.enrollmentStateService.activeSectionId$;
   }
 
-  public onSectionSelected(sectionId: string): void {
+  public onSectionSelected(sectionId: number): void {
     this.enrollmentStateService.setActiveSection(sectionId);
   }
 
